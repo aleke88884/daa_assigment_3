@@ -36,7 +36,7 @@ public class PrimMST {
         Set<String> inMST = new HashSet<>();
         Map<String, Double> key = new HashMap<>();
         Map<String, String> parent = new HashMap<>();
-        Map<String, Edge> parentEdge = new HashMap<>(); // Store the actual edge
+        Map<String, Edge> parentEdge = new HashMap<>();
         PriorityQueue<Node> pq = new PriorityQueue<>();
 
         // Initialize all keys to infinity
@@ -67,11 +67,14 @@ public class PrimMST {
                 String v = e.from.equals(u.vertex) ? e.to : e.from;
                 comparisons++;
 
+                // FIX: Ensure key.get(v) is not null and compare properly
+                double currentKey = key.getOrDefault(v, Double.POSITIVE_INFINITY);
+
                 // If v is not in MST and edge weight is smaller than current key
-                if (!inMST.contains(v) && e.weight < key.get(v)) {
+                if (!inMST.contains(v) && e.weight < currentKey) {
                     key.put(v, e.weight);
                     parent.put(v, u.vertex);
-                    parentEdge.put(v, e); // Store the edge
+                    parentEdge.put(v, e);
                     pq.add(new Node(v, e.weight));
                     decreaseKeyOps++;
                 }
