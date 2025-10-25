@@ -391,32 +391,6 @@ Both algorithms correctly handle:
 
 ---
 
-## 5. References
-
-### Primary Sources
-
-1. **Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C.** (2009). *Introduction to Algorithms* (3rd ed.). MIT Press.
-   - Chapter 23: Minimum Spanning Trees
-   - Section 23.1: Growing a Minimum Spanning Tree
-   - Section 23.2: Algorithms of Kruskal and Prim
-
-2. **Prim, R. C.** (1957). "Shortest connection networks and some generalizations". *Bell System Technical Journal*, 36(6), 1389-1401.
-
-3. **Kruskal, J. B.** (1956). "On the shortest spanning subtree of a graph and the traveling salesman problem". *Proceedings of the American Mathematical Society*, 7(1), 48-50.
-
-### Data Structures
-
-4. **Tarjan, R. E.** (1975). "Efficiency of a good but not linear set union algorithm". *Journal of the ACM*, 22(2), 215-225.
-
-5. **Fredman, M. L., & Tarjan, R. E.** (1987). "Fibonacci heaps and their uses in improved network optimization algorithms". *Journal of the ACM*, 34(3), 596-615.
-
-### Supplementary
-
-6. **Sedgewick, R., & Wayne, K.** (2011). *Algorithms* (4th ed.). Addison-Wesley Professional.
-
-7. **Skiena, S. S.** (2008). *The Algorithm Design Manual* (2nd ed.). Springer.
-
----
 
 ## Appendices
 
