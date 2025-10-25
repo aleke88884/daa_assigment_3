@@ -8,6 +8,13 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
+
 import algorithms.KruskalMST;
 import algorithms.PrimMST;
 import algorithms.models.AlgorithmResult;
@@ -20,7 +27,7 @@ public class App {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         // 1. Read input JSON
-        Reader reader = new FileReader("ass_3_input.json");
+        Reader reader = new FileReader("datasets/assign_3_input.json");
         JsonObject jsonObj = gson.fromJson(reader, JsonObject.class);
         JsonArray graphsArray = jsonObj.getAsJsonArray("graphs");
 
