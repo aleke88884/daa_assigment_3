@@ -3,8 +3,7 @@
 
 **Course:** Data Structures and Algorithms  
 **Project:** MST Algorithm Implementation and Analysis  
-**Student:** [Your Name]  
-**Date:** October 2025
+
 
 ---
 
