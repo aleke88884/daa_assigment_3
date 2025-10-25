@@ -12,13 +12,41 @@ public class Graph {
         this.id = id;
         this.nodes = nodes;
         this.edges = edges;
-        this.adj = new HashMap<>();
+        this.adj = buildAdjacencyList(edges);
+    }
 
-        for (String node : nodes)
-            adj.put(node, new ArrayList<>());
-        for (Edge e : edges) {
-            adj.get(e.from).add(e);
-            adj.get(e.to).add(e);
+    private Map<String, List<Edge>> buildAdjacencyList(List<Edge> edges) {
+        Map<String, List<Edge>> adjList = new HashMap<>();
+        for (String node : nodes) {
+            adjList.put(node, new ArrayList<>());
         }
+        for (Edge e : edges) {
+            adjList.get(e.from).add(e);
+            adjList.get(e.to).add(e);
+        }
+        return adjList;
+    }
+
+    public boolean isConnected() {
+        if (nodes.isEmpty())
+            return true;
+
+        Set<String> visited = new HashSet<>();
+        Queue<String> queue = new LinkedList<>();
+        queue.add(nodes.get(0));
+        visited.add(nodes.get(0));
+
+        while (!queue.isEmpty()) {
+            String current = queue.poll();
+            for (Edge e : adj.get(current)) {
+                String neighbor = e.from.equals(current) ? e.to : e.from;
+                if (!visited.contains(neighbor)) {
+                    visited.add(neighbor);
+                    queue.add(neighbor);
+                }
+            }
+        }
+
+        return visited.size() == nodes.size();
     }
 }

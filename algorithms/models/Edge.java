@@ -1,5 +1,7 @@
 package algorithms.models;
 
+import java.util.Objects;
+
 public class Edge {
     public final String from;
     public final String to;
@@ -12,7 +14,26 @@ public class Edge {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+        Edge edge = (Edge) o;
+        return Double.compare(edge.weight, weight) == 0 &&
+                ((from.equals(edge.from) && to.equals(edge.to)) ||
+                        (from.equals(edge.to) && to.equals(edge.from)));
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Math.min(from.hashCode(), to.hashCode()),
+                Math.max(from.hashCode(), to.hashCode()),
+                weight);
+    }
+
+    @Override
     public String toString() {
-        return "(" + from + " - " + to + ", " + weight + ")";
+        return String.format("%s-%s (%.2f)", from, to, weight);
     }
 }
