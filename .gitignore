@@ -1,5 +1,6 @@
 # Ignore all JSON files
 *.json
-
+*.jar
+*.assign_3_input.json
 # If you need to track specific JSON files, you can negate the ignore with:
 # !specific-file.json
