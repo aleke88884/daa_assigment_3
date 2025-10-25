@@ -1,0 +1,5 @@
+# Ignore all JSON files
+*.json
+
+# If you need to track specific JSON files, you can negate the ignore with:
+# !specific-file.json
